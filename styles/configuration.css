@@ -4,18 +4,20 @@
 #config-overlay h2{
     margin:0.5rem 0;
 }
-.form-content{
-    margin:0.5rem 0;
+.form-control{
+    margin:2rem 0;
 }
-.form-content label{
+.form-control label{
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: bold;
+    font-size: 2rem;
 }
-.form-content input{
+.form-control input{
     font:inherit;
     /* border:1px; */
-    border:1px solid rgb(204,204,204);
+    border:2px solid rgb(204,204,204);
+    border-radius: 0.5rem;
     width:15rem;
 }
 
@@ -44,7 +46,7 @@
 }
 
 #game-configuration h2{
-    font-size: 1.5rem;
+    font-size: 26px;
     margin:0.5rem 0;
 }
 
@@ -60,9 +62,13 @@
     color:rgb(47,4,82);
     margin:1rem 0;
 }
-.btn-alt{
-    font-size: 1rem;
-    background-color:rgb(221, 192, 245);
-    border:1px solid rgb(221, 192, 245);
-    /* border-radius: 2rem; */
+
+.error label{
+    color:rgb(136,2,2);
+}
+
+.error input{
+    border-color: rgb(136,2,2);
+    color:rgb(136,2,2);
+    background-color: rgb(253,219,219);
 }

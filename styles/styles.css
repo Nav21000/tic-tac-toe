@@ -20,12 +20,14 @@ body{
     color: white;
     border-radius:4px;
     cursor:pointer;
+    margin-left: 1rem;
 }
 
 .btn-alt{
-    background-color: transparent;
-    border-color: transparent;
-    color:rgb(140,0,255);
+    font-size: 1rem;
+    color:black;
+    background-color:rgb(221, 192, 245);
+    border:1px solid rgb(221, 192, 245);
 }
 
 

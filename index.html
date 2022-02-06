@@ -26,12 +26,13 @@
         <aside class="modal" id="config-overlay">
             <h2>Choose Your Name</h2>
             <form>
-                <div class="form-content">
+                <div class="form-control">
                     <label for="playername">Player Name</label>
-                    <input type="text" name="username" id="playername"/>
+                    <input type="text" name="playername" id="playername" required/>
                 </div>
+                <p id="config-error"></p>
                 <div>
-                    <button type="button" class="btn btn-alt" id= "cancel-config-btn">Cancel</button>
+                    <button type="reset" class="btn btn-alt" id= "cancel-config-btn">Cancel</button>
                     <button type="submit" class="btn">Confirm</button>
                 </div>
             </form>
