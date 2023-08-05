@@ -3,7 +3,7 @@ function resetGameStatus(){
     currentRound=1;
     gameOverElement.firstElementChild.innerHTML='You Won!,<span id="winner-name">PLAYER NAME</span>';
     gameOverElement.style.display='none';
-    
+
 
     let gameBoardIndex=0;
     for(let i=0;i<3;i++){
@@ -12,7 +12,7 @@ function resetGameStatus(){
             gameData[i][j]=0;
             const gameBoardElements=gameBoardElements.children[gameBoardIndex];
             gameBoardElements.textContent='';
-            gameBoardElements.classList.remove('disabled');
+            gameBoardElements.classList.remove('enabled');
             gameBoardIndex++;
         }
     }
@@ -25,6 +25,20 @@ function startNewGame() {
     if (players[0].name == '' || players[1].name == '') {
         return alert('Please enter custom player names');
     }
+
+    document.querySelector('#game-over').style.display = 'none'
+
+    document.querySelectorAll('#game-board li').forEach(el => {
+      el.innerHTML = ''
+      el.classList.remove('disabled')
+    })
+    for(let i=0;i<3;i++){
+        for(let j=0;j<3;j++)
+        {
+            gameData[i][j]=0
+        }
+      }
+
     activePlayerNameElement.textContent = players[activePlayer].name;
     gameAreaElement.style.display = 'block';
 }
@@ -80,7 +94,7 @@ function checkForGameOver() {
       if (gameData[i][0] > 0 && gameData[i][0] === gameData[i][1] && gameData[i][0] === gameData[i][2]) {
         return gameData[i][0];
     }
-  
+
     }
 
     //check for vertical win
@@ -89,7 +103,7 @@ function checkForGameOver() {
       if (gameData[0][i] > 0 && gameData[0][i] === gameData[1][i] && gameData[0][i] === gameData[2][i]) {
         return gameData[0][i];
     }
-  
+
     }
     // check for left to bottom diagonal win
     if(gameData[0][0]>0&&gameData[0][0]===gameData[1][1] && gameData[1][1]===gameData[2][2])
